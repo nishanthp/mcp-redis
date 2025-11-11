@@ -238,6 +238,7 @@ class TestMCPServerIntegration:
             "xdel",
             "set",
             "get",
+            "lrem",
         ]
         for tool in tool_names:
             assert tool in expected_tools, (
@@ -268,7 +269,7 @@ class TestMCPServerIntegration:
         tool_names = [tool["name"] for tool in tools]
 
         # Expected tool count (based on @mcp.tool() decorators in codebase)
-        expected_tool_count = 44
+        expected_tool_count = 45
         assert len(tools) == expected_tool_count, (
             f"Expected {expected_tool_count} tools, but got {len(tools)}"
         )
@@ -295,6 +296,7 @@ class TestMCPServerIntegration:
             "json_get",
             "json_set",
             "llen",
+            "lrem",
             "lpop",
             "lpush",
             "lrange",
